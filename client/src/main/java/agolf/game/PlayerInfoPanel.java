@@ -25,10 +25,14 @@ class PlayerInfoPanel extends Panel implements ItemListener, MouseListener {
     private static final Color leadingComparisonColor = new Color(0, 128, 0);
     private static final Color[][] playerColors =
             new Color[][] { // first color == player is in game, second == player has left the game
-                {new Color(0, 0, 255), new Color(128, 128, 255)},
-                {new Color(255, 0, 0), new Color(255, 128, 128)},
-                {new Color(128, 128, 0), new Color(128, 128, 64)},
-                {new Color(0, 160, 0), new Color(64, 160, 64)}
+                {new Color(0, 0, 255), new Color(0, 0, 0)},
+                {new Color(255, 0, 0), new Color(0, 0, 0)},
+                {new Color(128, 128, 0), new Color(0, 0, 0)},
+                {new Color(0, 160, 0), new Color(0, 0, 0)},
+                {new Color(102, 0, 204), new Color(0, 0, 0)},
+                {new Color(0, 153, 153), new Color(0, 0, 0)},
+                {new Color(255, 153, 255), new Color(0, 0, 0)},
+                {new Color(255, 153, 51), new Color(0, 0, 0)}
             };
 
     private static int scoreComparisonMode;
@@ -119,7 +123,7 @@ class PlayerInfoPanel extends Panel implements ItemListener, MouseListener {
                 }
             }
 
-            int yBaseline = (5 - this.playerCount) * 13;
+            int yBaseline = (9 - this.playerCount) * 13;
             // draw highlight around scores for current track
             if (this.currentTrackIndex >= 0 && this.currentTrackIndex < this.trackCount) {
                 this.graphics.setColor(currentTrackScoreHighlightColor);

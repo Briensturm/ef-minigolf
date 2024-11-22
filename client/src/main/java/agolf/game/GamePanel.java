@@ -553,14 +553,14 @@ public class GamePanel extends Panel {
     private void create(Image image) {
         if (this.gameContainer.gameApplet.syncIsValidSite.get()) {
             this.setLayout(null);
-            this.playerInfoPanel = new PlayerInfoPanel(this.gameContainer, 735, 60);
+            this.playerInfoPanel = new PlayerInfoPanel(this.gameContainer, 735, 120);
             this.playerInfoPanel.setLocation(0, 0);
             this.add(this.playerInfoPanel);
             this.gameCanvas = new GameCanvas(this.gameContainer, image);
-            this.gameCanvas.setLocation(0, 65);
+            this.gameCanvas.setLocation(0, 125);
             this.add(this.gameCanvas);
             this.gameControlPanel = new GameControlPanel(this.gameContainer, this.playerInfoPanel, 95, 80);
-            this.gameControlPanel.setLocation(this.width - 95, 445);
+            this.gameControlPanel.setLocation(this.width - 95, 505);
             this.add(this.gameControlPanel);
         }
     }
@@ -570,10 +570,10 @@ public class GamePanel extends Panel {
             this.setVisible(false);
             int var2 = mode > 0 ? 265 : 400;
             this.chatPanel = new ChatPanel(this.gameContainer, this.width - 100 - 5 - var2 - 5, 80, mode);
-            this.chatPanel.setLocation(0, 445);
+            this.chatPanel.setLocation(0, 505);
             this.add(this.chatPanel);
             this.trackInfoPanel = new TrackInfoPanel(this.gameContainer, var2, 80, mode == 0);
-            this.trackInfoPanel.setLocation(this.width - 100 - 5 - var2, 445);
+            this.trackInfoPanel.setLocation(this.width - 100 - 5 - var2, 505);
             this.add(this.trackInfoPanel);
             this.setVisible(true);
         }

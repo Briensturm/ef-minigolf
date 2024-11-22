@@ -23,7 +23,7 @@ public class SpriteManager {
         this.shapes = this.parseSpriteSheet("shapes", 28, 4, 15, 15);
         this.elements = this.parseSpriteSheet("elements", 24, 4, 15, 15);
         this.specials = this.parseSpriteSheet("special", 28, 4, 15, 15);
-        this.balls = this.parseSpriteSheet("balls", 8, 4, 13, 13);
+        this.balls = this.parseSpriteSheet("balls", 16, 8, 13, 13);
         this.pixelshapeMasks = new int[28][][];
         this.specialPixelMasks = new int[28][][];
         this.anIntArrayArray968 = new int[GameBackgroundCanvas.trackAdvertSize][];
@@ -111,16 +111,16 @@ public class SpriteManager {
         Image[] var10 = new Image[spriteCount];
 
         for (int var11 = 0; var11 < spriteCount; ++var11) {
-            int var12 = var11 / spritesPerRow;
-            int var13 = var11 % spritesPerRow;
+            int row = var11 / spritesPerRow;
+            int column = var11 % spritesPerRow;
             int[] var14 = new int[spriteWidth * spriteHeight];
 
             for (int var15 = 0; var15 < spriteHeight; ++var15) {
                 for (int var16 = 0; var16 < spriteWidth; ++var16) {
                     var14[var15 * spriteWidth + var16] = var9[
-                            (var12 * spriteHeight + var12 + 1 + var15) * sheetWidth
-                                    + var13 * spriteWidth
-                                    + var13
+                            (row * spriteHeight + row + 1 + var15) * sheetWidth
+                                    + column * spriteWidth
+                                    + column
                                     + 1
                                     + var16];
                 }

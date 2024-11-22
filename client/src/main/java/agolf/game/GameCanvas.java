@@ -744,13 +744,13 @@ public class GameCanvas extends GameBackgroundCanvas
         }
 
         List<double[]> startPositions = new ArrayList<>();
-        this.resetPositionX = new double[4];
-        this.resetPositionY = new double[4];
-        this.teleportExists = new ArrayList[4];
-        this.teleportStarts = new ArrayList[4];
+        this.resetPositionX = new double[this.playerCount];
+        this.resetPositionY = new double[this.playerCount];
+        this.teleportExists = new ArrayList[this.playerCount];
+        this.teleportStarts = new ArrayList[this.playerCount];
         List<int[]> magnets = new ArrayList<>();
 
-        for (int i = 0; i < 4; ++i) {
+        for (int i = 0; i < this.playerCount; ++i) {
             this.resetPositionX[i] = this.resetPositionY[i] = -1.0D;
             this.teleportExists[i] = new ArrayList<>();
             this.teleportStarts[i] = new ArrayList<>();
@@ -1812,7 +1812,7 @@ public class GameCanvas extends GameBackgroundCanvas
 
         int ballSpriteOffset = 0;
         if (super.gameContainer.graphicsQualityIndex == 3) {
-            ballSpriteOffset = (x / 5 + y / 5) % 2 * 4;
+            ballSpriteOffset = (x / 5 + y / 5) % 2 * 8;
         }
 
         if (var3 == 0.0D) {

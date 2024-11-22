@@ -74,7 +74,7 @@ public abstract class AApplet extends Applet implements Runnable, ActionListener
     public void init() {
         System.out.println("\n" + this.getAppletInfo() + "\n");
         this.appletWidth = 735;
-        this.appletHeight = 525;
+        this.appletHeight = 585;
         this.backgroundImageKey = null;
         this.backgroundXOffset = 0;
         this.backgroundYOffset = 0;
